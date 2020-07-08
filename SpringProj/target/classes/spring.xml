@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- <bean id="one" class="com.sagar.SpringProj.ClassOne" scope="prototype"></bean>  -->
+    <!-- <bean id="one" class="com.sagar.SpringProj.ClassOne"></bean> for singleton scope is default-->
+
+
+<bean id="one" class="com.sagar.SpringProj.ClassOne" autowire="byType">
+<!-- for setter injection -->
+<!--<property name="age" value = "15"></property>  -->
+<property name="age" value = "15"></property><!-- used again for autowiring -->
+<!-- default constructor in ClassOne is commented  and parameterised constructor given below -->
+<!--<constructor-arg value = "15"></constructor-arg>--><!--commented for autowiring -->
+<!-- to create reference -->
+<!--<property name="classtwo" ref = "classtwo"></property> commented for autowire  -->
+<!-- <property name="classthree" ref = "classtwotwo"></property>  -->
+
+</bean>
+
+<bean id="classthree" class="com.sagar.SpringProj.Classtwo"></bean> 
+
+<bean id="classtwotwo" class="com.sagar.SpringProj.Classtwotwo" primary = "true"></bean> 
+
+</beans>
+
